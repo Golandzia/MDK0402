@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeWork8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="410" Width="360">
     <Grid>
-        
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="26.565" CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="#FF9B77C9" Offset="0.993"/>
+                <GradientStop Color="#FF5C6EE6"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox  x:Name="LoginFromUser" Grid.Row="0" Height="33" Width="235" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="0,52,0,0" MaxLines="1" FontFamily="Arial Rounded MT Bold" FontSize="15"/>
+        <TextBox x:Name="PasswordFromUser" Grid.Row="1" Grid.ColumnSpan="2" Height="33" Width="235"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,19" FontFamily="Arial Rounded MT Bold" FontSize="15"/>
+        <Button  x:Name="AuthorizationButton" Grid.Row="2" Grid.ColumnSpan="2" FontSize="18" FontFamily="MS Reference Sans Serif" Height="45" Width="240" Margin="0,0,0,13" Click="AuthorizationButton_Click" >Login
+        </Button>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Yu Gothic UI Semibold" FontSize="13">Логин:</Label>
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Yu Gothic UI Semibold" FontSize="13" Margin="8,0,0,73">Пароль:</Label>
+        <StackPanel Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

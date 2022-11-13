@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeWork8.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace HomeWork8
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void AuthorizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            ReaderUsers reader = new ReaderUsers();
+            var result = await reader.UserWork(LoginFromUser.Text, PasswordFromUser.Text);
+            if (LoginFromUser.Text != "" && PasswordFromUser.Text != "")
+            {
+                if (result == true)
+                {
+                    MessageBox.Show("Вход выполнен");
+                }
+                else MessageBox.Show("Неверный логин или пароль");
+            }
+            else MessageBox.Show("Не все поля заполнены");
         }
     }
 }
