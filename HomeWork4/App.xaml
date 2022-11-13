@@ -1,0 +1,15 @@
+﻿<Application x:Class="HomeWork4.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HomeWork4"
+             StartupUri="Front/AuthorizationWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets\Styles\Buttons\ButtonsStyleRoundCorners.xaml"/>
+                <ResourceDictionary Source="Assets\Styles\TextBoxes\TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Assets\Styles\Buttons\ButtonStyleAllTransparent.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
