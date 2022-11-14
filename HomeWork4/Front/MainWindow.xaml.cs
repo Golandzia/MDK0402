@@ -1,5 +1,9 @@
-﻿using System;
+﻿using HomeWork4.Core;
+using HomeWork4.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +27,31 @@ namespace HomeWork4
         public MainWindow()
         {
             InitializeComponent();
+            FileReader fileReader = new FileReader();
+            fileReader.Teacher();
+            LessonComboBox.ItemsSource = fileReader.Teacher();
+            TeacherComboBox.DisplayMemberPath = "TeacherName";
+            fileReader.Lesson();
+            LessonComboBox.ItemsSource = fileReader.Lesson();
+            LessonComboBox.DisplayMemberPath = "Name";
+            times = new ObservableCollection<Time>();
+        }
+
+        Time time;
+        public ObservableCollection<Time> times;
+        private void createButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (TeacherComboBox.Text == null || LessonComboBox.Text == null)
+            {
+                MessageBox.Show("Выберите учителя и предмет!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                time = new Time(TeacherComboBox.Text, LessonComboBox.Text);
+                times.Add(time);
+                Output.ItemsSource = times;
+                Output.DisplayMemberPath = "TimeShow";
+            }
         }
     }
 }

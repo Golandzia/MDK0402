@@ -11,8 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AuthorizationWindow.Core;
-
 namespace HomeWork4.Front
 {
     /// <summary>
@@ -24,21 +22,21 @@ namespace HomeWork4.Front
         {
             InitializeComponent();
         }
-
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
-            User user = new User();
-            if (user.CheckingUser(LoginFromUser.Text, PasswordFromUser.Text))
+            string login, password, passwordBoxText;
+
+            login = LoginFromUser.Text;
+            password = PasswordFromUser.Text;
+            passwordBoxText = PasswordBoxFromUser.Password.ToString();
+
+            VerificateUser verificateUser = new VerificateUser();
+            bool result = verificateUser.Check(login, password, passwordBoxText);
+            if (result == true)
             {
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Invalid login or password", "Authorization", MessageBoxButton.OK, MessageBoxImage.Warning);
-                LoginFromUser.Text = "";
-                PasswordFromUser.Text = "";
             }
         }
     }

@@ -33,7 +33,8 @@
         </Grid.ColumnDefinitions>
 
         <TextBox Style="{DynamicResource TextBoxStyleWithRoundCorners}" x:Name="LoginFromUser" Grid.Row="0" Height="33" Width="235" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" Margin="0,52,0,0" MaxLines="1" FontFamily="Arial Rounded MT Bold" FontSize="15"/>
-        <TextBox x:Name="PasswordFromUser" Grid.Row="1" Grid.ColumnSpan="2" Height="33" Width="235" Style="{DynamicResource TextBoxStyleWithRoundCorners}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,19" FontFamily="Arial Rounded MT Bold" FontSize="15"/>
+        <TextBox x:Name="PasswordFromUser" Grid.Row="1" Grid.ColumnSpan="2" Height="33" Width="235" Style="{DynamicResource TextBoxStyleWithRoundCorners}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,19" FontFamily="Arial Rounded MT Bold" FontSize="15" Visibility="Hidden"/>
+        <PasswordBox x:Name="PasswordBoxFromUser" Grid.Row="1" Grid.ColumnSpan="2" Height="33" Width="235"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,19" FontFamily="Arial Rounded MT Bold" FontSize="15" />
         <Button Style="{DynamicResource ButtonStyleWithRoundCourners}" x:Name="AuthorizationButton" Grid.Row="2" Grid.ColumnSpan="2" FontSize="18" FontFamily="MS Reference Sans Serif" Height="45" Width="240" Margin="0,0,0,13" Click="AuthorizationButton_Click" >Login
         </Button>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Yu Gothic UI Semibold" FontSize="13">Логин:</Label>
